@@ -21,6 +21,14 @@
 
 PulseDeck helps Hyprland users inspect connected monitors, see advertised refresh-rate modes, generate a safe `monitors.conf`, and apply changes with backups.
 
+## First Release
+
+PulseDeck `0.1.0` is the first public Linux release of the app. It is built for Hyprland and Omarchy users who want a safer, more visual way to understand and manage their display setup without hand-editing monitor config every time something changes.
+
+The app reads connected displays through `hyprctl`, shows each monitor's current resolution, scale, position, and refresh rate, then compares that state against the modes Hyprland says the hardware actually advertises. PulseDeck does not try to force unsupported refresh rates. Instead, it helps you see when 120Hz or higher is available, when a lower resolution may be needed, and when a cable, dock, adapter, GPU port, or EDID issue may be limiting the display.
+
+For this first version, the workflow is intentionally focused: scan monitors, preview generated Hyprland monitor lines, apply them with a backup, reload Hyprland, and review config errors if anything goes wrong. It also includes a one-time setup authorization check, a black-and-white interface, profile-oriented views, diagnostics, and backup visibility. PulseDeck is not trying to replace every display tool; it is a practical control panel for making monitor changes more understandable, reversible, and calm.
+
 ## Features
 
 - Reads connected displays with `hyprctl monitors -j`.
