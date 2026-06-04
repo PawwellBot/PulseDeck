@@ -44,40 +44,15 @@ GitHub Pages is only used to host package repository files. The install instruct
 
 ### Arch / Omarchy
 
-Add the PulseDeck pacman repository once:
-
-```bash
-sudo tee -a /etc/pacman.conf >/dev/null <<'EOF'
-
-[pulsedeck]
-SigLevel = Optional TrustAll
-Server = https://pawwellbot.github.io/PulseDeck/arch/x86_64
-EOF
-```
-
-Then install PulseDeck:
-
 ```bash
 sudo pacman -S pulsedeck
 ```
 
-The compatibility alias works too:
-
-```bash
-sudo pacman -S pulse-deck
-```
-
 ### Debian / Ubuntu
 
-Add the PulseDeck apt repository once, then install:
-
 ```bash
-echo "deb [trusted=yes] https://pawwellbot.github.io/PulseDeck/apt stable main" | sudo tee /etc/apt/sources.list.d/pulsedeck.list
-sudo apt update
 sudo apt install pulsedeck
 ```
-
-The repositories are unsigned for the first release, so the install snippets explicitly opt into trusting the PulseDeck repository.
 
 ### AppImage
 
