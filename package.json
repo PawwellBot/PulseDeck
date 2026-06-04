@@ -16,6 +16,7 @@
     "dist": "tauri build",
     "package": "npm run package:all",
     "package:all": "node scripts/package-all.mjs",
+    "package:flatpak": "scripts/package-flatpak.sh",
     "package:linux": "scripts/package-linux.sh --no-bump",
     "package:windows": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/package-windows.ps1 -NoBump",
     "version:bump": "scripts/bump-version.sh"

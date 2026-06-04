@@ -16,7 +16,7 @@
     <img alt="Discord members" src="https://img.shields.io/discord/1495367426571899022?style=for-the-badge&logo=discord&logoColor=white&label=Members&color=5865F2&labelColor=404EED" />
   </a>
   <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-1BD96A?style=for-the-badge&labelColor=202421" />
-  <img alt="Linux" src="https://img.shields.io/badge/Linux-AppImage%20%7C%20deb%20%7C%20rpm-35D6D0?style=for-the-badge&logo=linux&logoColor=white&labelColor=202421" />
+  <img alt="Linux" src="https://img.shields.io/badge/Linux-AppImage%20%7C%20deb%20%7C%20rpm%20%7C%20Flatpak-35D6D0?style=for-the-badge&logo=linux&logoColor=white&labelColor=202421" />
 </p>
 
 PulseDeck helps Hyprland users inspect connected monitors, see advertised refresh-rate modes, generate a safe `monitors.conf`, and apply changes with backups.
@@ -52,6 +52,12 @@ sudo pacman -S pulsedeck
 
 ```bash
 sudo apt install pulsedeck
+```
+
+### Flatpak
+
+```bash
+curl -L https://github.com/PawwellBot/PulseDeck/releases/download/v0.1.0/PulseDeck_0.1.0_x86_64.flatpak -o /tmp/PulseDeck_0.1.0_x86_64.flatpak && flatpak install --user -y /tmp/PulseDeck_0.1.0_x86_64.flatpak
 ```
 
 ### AppImage
@@ -110,6 +116,7 @@ yay -S pulsedeck-bin
 npm install
 npm run check
 npm run package:linux
+npm run package:flatpak
 ```
 
 Packages are written to:

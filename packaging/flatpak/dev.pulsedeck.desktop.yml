@@ -1,0 +1,58 @@
+id: dev.pulsedeck.desktop
+runtime: org.gnome.Platform
+runtime-version: '50'
+sdk: org.gnome.Sdk
+command: pulsedeck
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --share=ipc
+  - --device=dri
+  - --filesystem=xdg-config/hypr:create
+  - --filesystem=xdg-run/hypr:ro
+  - --talk-name=org.freedesktop.Flatpak
+modules:
+  - name: pulsedeck
+    buildsystem: simple
+    sources:
+      - type: file
+        url: https://github.com/PawwellBot/PulseDeck/releases/download/v0.1.0/PulseDeck_0.1.0_amd64.deb
+        sha256: a37cba6ba340c5ede2cb6b7837a4a28321888b9fe9b6fa549434ec1f1b3c7184
+        only-arches:
+          - x86_64
+      - type: file
+        path: ../../src-tauri/icons/32x32.png
+        dest-filename: pulsedeck-32.png
+      - type: file
+        path: ../../src-tauri/icons/64x64.png
+        dest-filename: pulsedeck-64.png
+      - type: file
+        path: ../../src-tauri/icons/128x128.png
+        dest-filename: pulsedeck-128.png
+      - type: file
+        path: ../../src-tauri/icons/128x128@2x.png
+        dest-filename: pulsedeck-256.png
+      - type: file
+        path: dev.pulsedeck.desktop.metainfo.xml
+    build-commands:
+      - ar -x PulseDeck_0.1.0_amd64.deb
+      - tar --no-same-owner -xf data.tar.*
+      - install -Dm755 usr/bin/pulsedeck /app/bin/pulsedeck
+      - |
+        install -Dm755 /dev/stdin /app/bin/hyprctl <<'EOF'
+        #!/bin/sh
+        exec flatpak-spawn --host hyprctl "$@"
+        EOF
+      - |
+        install -Dm755 /dev/stdin /app/bin/pkexec <<'EOF'
+        #!/bin/sh
+        exec flatpak-spawn --host pkexec "$@"
+        EOF
+      - install -Dm644 usr/share/applications/PulseDeck.desktop /app/share/applications/dev.pulsedeck.desktop.desktop
+      - sed -i 's/^Icon=.*/Icon=dev.pulsedeck.desktop/' /app/share/applications/dev.pulsedeck.desktop.desktop
+      - sed -i 's/^StartupWMClass=.*/StartupWMClass=dev.pulsedeck.desktop/' /app/share/applications/dev.pulsedeck.desktop.desktop
+      - install -Dm644 pulsedeck-32.png /app/share/icons/hicolor/32x32/apps/dev.pulsedeck.desktop.png
+      - install -Dm644 pulsedeck-64.png /app/share/icons/hicolor/64x64/apps/dev.pulsedeck.desktop.png
+      - install -Dm644 pulsedeck-128.png /app/share/icons/hicolor/128x128/apps/dev.pulsedeck.desktop.png
+      - install -Dm644 pulsedeck-256.png /app/share/icons/hicolor/256x256/apps/dev.pulsedeck.desktop.png
+      - install -Dm644 dev.pulsedeck.desktop.metainfo.xml /app/share/metainfo/dev.pulsedeck.desktop.metainfo.xml

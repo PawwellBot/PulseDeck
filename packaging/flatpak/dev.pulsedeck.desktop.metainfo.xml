@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>dev.pulsedeck.desktop</id>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  <name>PulseDeck</name>
+  <summary>Hyprland display control cockpit for Omarchy</summary>
+  <description>
+    <p>
+      PulseDeck helps Hyprland and Omarchy users inspect connected monitors,
+      review advertised display modes, generate monitor configuration, and
+      apply changes with backups.
+    </p>
+  </description>
+  <launchable type="desktop-id">dev.pulsedeck.desktop.desktop</launchable>
+  <url type="homepage">https://github.com/PawwellBot/PulseDeck</url>
+  <url type="bugtracker">https://github.com/PawwellBot/PulseDeck/issues</url>
+  <developer id="io.github.pawwellbot">
+    <name>PawwellBot</name>
+  </developer>
+  <categories>
+    <category>Utility</category>
+  </categories>
+  <requires>
+    <control>pointing</control>
+    <control>keyboard</control>
+  </requires>
+  <releases>
+    <release version="0.1.0" date="2026-06-04">
+      <description>
+        <p>Initial Linux release with Flatpak bundle support.</p>
+      </description>
+    </release>
+  </releases>
+  <content_rating type="oars-1.1" />
+</component>
