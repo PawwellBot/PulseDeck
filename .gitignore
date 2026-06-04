@@ -6,3 +6,7 @@ src-tauri/target/
 src-tauri/gen/
 *.log
 build/
+packaging/arch/**/pkg/
+packaging/arch/**/src/
+packaging/arch/**/*.deb
+packaging/arch/**/*.pkg.tar.*

@@ -38,7 +38,33 @@ For this first version, the workflow is intentionally focused: scan monitors, pr
 - Shows config errors after `hyprctl reload`.
 - Includes a one-time setup check for administrator authorization.
 
-## Downloads
+## Package Repositories
+
+PulseDeck can be installed from the hosted package repositories after adding the source once.
+
+Arch / Omarchy:
+
+```bash
+sudo tee -a /etc/pacman.conf >/dev/null <<'EOF'
+
+[pulsedeck]
+SigLevel = Optional TrustAll
+Server = https://pawwellbot.github.io/PulseDeck/arch/x86_64
+EOF
+sudo pacman -Sy pulsedeck
+```
+
+Debian / Ubuntu:
+
+```bash
+echo "deb [trusted=yes] https://pawwellbot.github.io/PulseDeck/apt stable main" | sudo tee /etc/apt/sources.list.d/pulsedeck.list
+sudo apt update
+sudo apt install pulsedeck
+```
+
+The repositories are unsigned for the first release, so the install snippets explicitly opt into trusting the PulseDeck repository.
+
+## Direct Downloads
 
 Linux builds are published as:
 
@@ -79,6 +105,21 @@ Packages are written to:
 
 ```text
 src-tauri/target/release/bundle/
+```
+
+## AUR
+
+The AUR package files are prepared in:
+
+```text
+packaging/aur/pulsedeck-bin/
+```
+
+The package is named `pulsedeck-bin` and provides `pulsedeck`. Publishing to AUR requires an AUR account with this machine's SSH public key added:
+
+```bash
+ssh -T aur@aur.archlinux.org
+scripts/publish-aur.sh
 ```
 
 ## Notes

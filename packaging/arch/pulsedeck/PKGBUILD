@@ -1,0 +1,22 @@
+# Maintainer: PawwellBot <PawwellBot@users.noreply.github.com>
+
+pkgname=pulsedeck
+pkgver=0.1.0
+pkgrel=1
+pkgdesc='Hyprland display control cockpit for Omarchy'
+arch=('x86_64')
+url='https://github.com/PawwellBot/PulseDeck'
+license=('MIT')
+depends=('webkit2gtk-4.1' 'gtk3')
+optdepends=(
+  'hyprland: monitor scanning and reload support'
+  'polkit: one-time admin authorization prompt'
+)
+source=("https://github.com/PawwellBot/PulseDeck/releases/download/v${pkgver}/PulseDeck_${pkgver}_amd64.deb")
+noextract=("PulseDeck_${pkgver}_amd64.deb")
+sha256sums=('a37cba6ba340c5ede2cb6b7837a4a28321888b9fe9b6fa549434ec1f1b3c7184')
+
+package() {
+  bsdtar -xf "${srcdir}/PulseDeck_${pkgver}_amd64.deb" -C "${srcdir}"
+  bsdtar -xf "${srcdir}"/data.tar.* -C "${pkgdir}"
+}
