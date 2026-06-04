@@ -79,50 +79,7 @@ for rel in files:
 PY
 )
 
-cat > "$PAGES_DIR/index.html" <<'HTML'
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>PulseDeck Package Repositories</title>
-    <style>
-      body { margin: 0; background: #0b0f14; color: #f4f4f5; font-family: Inter, ui-sans-serif, system-ui, sans-serif; line-height: 1.6; }
-      main { max-width: 880px; margin: 0 auto; padding: 48px 20px; }
-      h1 { font-size: clamp(2rem, 5vw, 4rem); line-height: 1.05; margin: 0 0 12px; }
-      h2 { margin-top: 36px; }
-      p { color: #cbd5e1; }
-      pre { overflow-x: auto; background: #000; border: 1px solid rgba(255,255,255,.14); border-radius: 8px; padding: 16px; }
-      code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
-      a { color: #7cf7b8; }
-    </style>
-  </head>
-  <body>
-    <main>
-      <h1>PulseDeck packages</h1>
-      <p>Install PulseDeck from package-manager repositories instead of downloading files manually.</p>
-
-      <h2>Arch / Omarchy</h2>
-      <pre><code>sudo tee -a /etc/pacman.conf &gt;/dev/null &lt;&lt;'EOF'
-
-[pulsedeck]
-SigLevel = Optional TrustAll
-Server = https://pawwellbot.github.io/PulseDeck/arch/x86_64
-EOF
-sudo pacman -Sy pulsedeck</code></pre>
-      <p>The alias package also works:</p>
-      <pre><code>sudo pacman -S pulse-deck</code></pre>
-
-      <h2>Debian / Ubuntu</h2>
-      <pre><code>echo "deb [trusted=yes] https://pawwellbot.github.io/PulseDeck/apt stable main" | sudo tee /etc/apt/sources.list.d/pulsedeck.list
-sudo apt update
-sudo apt install pulsedeck</code></pre>
-
-      <p>Source and releases: <a href="https://github.com/PawwellBot/PulseDeck">github.com/PawwellBot/PulseDeck</a></p>
-    </main>
-  </body>
-</html>
-HTML
+touch "$PAGES_DIR/.nojekyll"
 
 cd "$PAGES_DIR"
 git init -b gh-pages

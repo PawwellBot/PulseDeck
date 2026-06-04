@@ -38,11 +38,13 @@ For this first version, the workflow is intentionally focused: scan monitors, pr
 - Shows config errors after `hyprctl reload`.
 - Includes a one-time setup check for administrator authorization.
 
-## Package Repositories
+## Install
 
-PulseDeck can be installed from the hosted package repositories after adding the source once.
+GitHub Pages is only used to host package repository files. The install instructions live here in the repository README.
 
-Arch / Omarchy:
+### Arch / Omarchy
+
+Add the PulseDeck pacman repository once:
 
 ```bash
 sudo tee -a /etc/pacman.conf >/dev/null <<'EOF'
@@ -51,16 +53,23 @@ sudo tee -a /etc/pacman.conf >/dev/null <<'EOF'
 SigLevel = Optional TrustAll
 Server = https://pawwellbot.github.io/PulseDeck/arch/x86_64
 EOF
-sudo pacman -Sy pulsedeck
 ```
 
-The compatibility alias also works after the repository has been added:
+Then install PulseDeck:
+
+```bash
+sudo pacman -Syu pulsedeck
+```
+
+The compatibility alias works too:
 
 ```bash
 sudo pacman -S pulse-deck
 ```
 
-Debian / Ubuntu:
+### Debian / Ubuntu
+
+Add the PulseDeck apt repository once, then install:
 
 ```bash
 echo "deb [trusted=yes] https://pawwellbot.github.io/PulseDeck/apt stable main" | sudo tee /etc/apt/sources.list.d/pulsedeck.list
@@ -70,33 +79,54 @@ sudo apt install pulsedeck
 
 The repositories are unsigned for the first release, so the install snippets explicitly opt into trusting the PulseDeck repository.
 
-## Direct Downloads
-
-Linux builds are published as:
-
-- `PulseDeck_0.1.0_amd64.AppImage`
-- `PulseDeck_0.1.0_amd64.deb`
-- `PulseDeck-0.1.0-1.x86_64.rpm`
-
-## Install
-
-AppImage:
+### AppImage
 
 ```bash
+curl -LO https://github.com/PawwellBot/PulseDeck/releases/download/v0.1.0/PulseDeck_0.1.0_amd64.AppImage
 chmod +x PulseDeck_0.1.0_amd64.AppImage
 ./PulseDeck_0.1.0_amd64.AppImage
 ```
 
-Debian/Ubuntu:
+### Manual Debian / Ubuntu Package
 
 ```bash
+curl -LO https://github.com/PawwellBot/PulseDeck/releases/download/v0.1.0/PulseDeck_0.1.0_amd64.deb
 sudo apt install ./PulseDeck_0.1.0_amd64.deb
 ```
 
-Fedora/RHEL:
+### Fedora / RHEL
 
 ```bash
+curl -LO https://github.com/PawwellBot/PulseDeck/releases/download/v0.1.0/PulseDeck-0.1.0-1.x86_64.rpm
 sudo dnf install ./PulseDeck-0.1.0-1.x86_64.rpm
+```
+
+### Checksums
+
+```bash
+curl -LO https://github.com/PawwellBot/PulseDeck/releases/download/v0.1.0/PulseDeck_0.1.0_SHA256SUMS.txt
+sha256sum -c PulseDeck_0.1.0_SHA256SUMS.txt
+```
+
+### AUR
+
+The AUR package files are prepared in:
+
+```text
+packaging/aur/pulsedeck-bin/
+```
+
+The package is named `pulsedeck-bin` and provides `pulsedeck`. Publishing to AUR requires an AUR account with this machine's SSH public key added:
+
+```bash
+ssh -T aur@aur.archlinux.org
+scripts/publish-aur.sh
+```
+
+After it is published to AUR, install it with an AUR helper:
+
+```bash
+yay -S pulsedeck-bin
 ```
 
 ## Build
@@ -111,21 +141,6 @@ Packages are written to:
 
 ```text
 src-tauri/target/release/bundle/
-```
-
-## AUR
-
-The AUR package files are prepared in:
-
-```text
-packaging/aur/pulsedeck-bin/
-```
-
-The package is named `pulsedeck-bin` and provides `pulsedeck`. Publishing to AUR requires an AUR account with this machine's SSH public key added:
-
-```bash
-ssh -T aur@aur.archlinux.org
-scripts/publish-aur.sh
 ```
 
 ## Notes
