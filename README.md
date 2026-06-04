@@ -5,18 +5,18 @@
 </p>
 
 <p align="center">
-  <strong>A black-and-white Hyprland display control cockpit for Omarchy.</strong>
+  <strong>A Hyprland display control cockpit for Omarchy.</strong>
 </p>
 
 <p align="center">
   <a href="https://discord.gg/YOUR_INVITE_CODE">
-    <img alt="Join Discord" src="https://img.shields.io/badge/Discord-Join-000000?style=for-the-badge&logo=discord&logoColor=white&labelColor=111111" />
+    <img alt="Join Discord" src="https://img.shields.io/badge/Discord-Join-5865F2?style=for-the-badge&logo=discord&logoColor=white&labelColor=404EED" />
   </a>
   <a href="https://discord.gg/YOUR_INVITE_CODE">
-    <img alt="Discord members" src="https://img.shields.io/discord/YOUR_SERVER_ID?style=for-the-badge&logo=discord&logoColor=white&label=Members&color=000000&labelColor=111111" />
+    <img alt="Discord members" src="https://img.shields.io/discord/YOUR_SERVER_ID?style=for-the-badge&logo=discord&logoColor=white&label=Members&color=5865F2&labelColor=404EED" />
   </a>
-  <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-000000?style=for-the-badge&labelColor=111111" />
-  <img alt="Linux" src="https://img.shields.io/badge/Linux-AppImage%20%7C%20deb%20%7C%20rpm-000000?style=for-the-badge&logo=linux&logoColor=white&labelColor=111111" />
+  <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-1BD96A?style=for-the-badge&labelColor=202421" />
+  <img alt="Linux" src="https://img.shields.io/badge/Linux-AppImage%20%7C%20deb%20%7C%20rpm-35D6D0?style=for-the-badge&logo=linux&logoColor=white&labelColor=202421" />
 </p>
 
 PulseDeck helps Hyprland users inspect connected monitors, see advertised refresh-rate modes, generate a safe `monitors.conf`, and apply changes with backups.
