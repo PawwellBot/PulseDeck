@@ -58,7 +58,7 @@ EOF
 Then install PulseDeck:
 
 ```bash
-sudo pacman -Syu pulsedeck
+sudo pacman -S pulsedeck
 ```
 
 The compatibility alias works too:
