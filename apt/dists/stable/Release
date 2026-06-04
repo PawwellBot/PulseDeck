@@ -1,0 +1,14 @@
+Origin: PulseDeck
+Label: PulseDeck
+Suite: stable
+Codename: stable
+Date: Thu, 04 Jun 2026 14:45:14 GMT
+Architectures: amd64
+Components: main
+Description: PulseDeck package repository
+MD5Sum:
+ 2d9dd8efe952a21c8fd515fd06974a2f 626 main/binary-amd64/Packages
+ 415b98234e4fe2ffaecb43c4c1bbda8a 443 main/binary-amd64/Packages.gz
+SHA256:
+ 191f1608350e6aab4d76a367b2f67bda1d90087d837e0011020022262ea6dc99 626 main/binary-amd64/Packages
+ 492b41007be772ef6fc05f46f59d59e7695f04e4e4abbe0ef619875c1f782ade 443 main/binary-amd64/Packages.gz

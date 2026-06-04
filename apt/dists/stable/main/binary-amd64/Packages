@@ -1,0 +1,18 @@
+Package: pulsedeck
+Version: 0.1.0
+Architecture: amd64
+Maintainer: PulseDeck
+Installed-Size: 9560
+Depends: libwebkit2gtk-4.1-0, libgtk-3-0
+Conflicts: pulse-deck
+Replaces: pulse-deck
+Provides: pulse-deck
+Filename: pool/main/p/pulsedeck/pulsedeck_0.1.0_amd64.deb
+Size: 2116612
+MD5sum: f5de97b1dc669edf3508ac43849eb4a3
+SHA1: 3e85178013f0814fdb6d95608697477386e14603
+SHA256: a37cba6ba340c5ede2cb6b7837a4a28321888b9fe9b6fa549434ec1f1b3c7184
+Priority: optional
+Description: Hyprland display control cockpit
+ PulseDeck helps Omarchy users inspect monitors, prefer high refresh modes, and write Hyprland monitor configuration safely.
+
