@@ -1,0 +1,10 @@
+pkgbase = pulse-deck
+	pkgdesc = Compatibility alias for the pulsedeck package
+	pkgver = 0.1.0
+	pkgrel = 1
+	url = https://github.com/PawwellBot/PulseDeck
+	arch = any
+	license = MIT
+	depends = pulsedeck
+
+pkgname = pulse-deck

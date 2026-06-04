@@ -1,0 +1,19 @@
+# Maintainer: PawwellBot <PawwellBot@users.noreply.github.com>
+
+pkgname=pulse-deck
+pkgver=0.1.0
+pkgrel=1
+pkgdesc='Compatibility alias for the pulsedeck package'
+arch=('any')
+url='https://github.com/PawwellBot/PulseDeck'
+license=('MIT')
+depends=('pulsedeck')
+
+package() {
+  install -Dm644 /dev/stdin "${pkgdir}/usr/share/doc/${pkgname}/README" <<'EOF'
+This package is a compatibility alias.
+
+It depends on the real PulseDeck package:
+  pulsedeck
+EOF
+}

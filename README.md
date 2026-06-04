@@ -54,6 +54,12 @@ EOF
 sudo pacman -Sy pulsedeck
 ```
 
+The compatibility alias also works after the repository has been added:
+
+```bash
+sudo pacman -S pulse-deck
+```
+
 Debian / Ubuntu:
 
 ```bash
