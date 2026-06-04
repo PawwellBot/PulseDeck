@@ -1,0 +1,51 @@
+{
+  "name": "pulse-deck",
+  "productName": "PulseDeck",
+  "version": "0.1.0",
+  "description": "Omarchy-first display control cockpit for Hyprland monitor profiles.",
+  "type": "module",
+  "private": true,
+  "author": "PulseDeck",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 1420",
+    "start": "tauri dev",
+    "tauri": "tauri",
+    "check": "vue-tsc --noEmit",
+    "build": "vue-tsc --noEmit && vite build",
+    "dist": "tauri build",
+    "package": "npm run package:all",
+    "package:all": "node scripts/package-all.mjs",
+    "package:linux": "scripts/package-linux.sh --no-bump",
+    "package:windows": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/package-windows.ps1 -NoBump",
+    "version:bump": "scripts/bump-version.sh"
+  },
+  "dependencies": {
+    "@lucide/vue": "^1.17.0",
+    "@tanstack/vue-query": "5.90.7",
+    "@tauri-apps/api": "^2.5.0",
+    "@vueuse/core": "^11.1.0",
+    "dayjs": "^1.11.10",
+    "floating-vue": "^5.2.2",
+    "fuse.js": "^6.6.2",
+    "pinia": "^3.0.0",
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.5.0",
+    "@types/node": "^24.0.0",
+    "@types/web-bluetooth": "^0.0.21",
+    "@vitejs/plugin-vue": "^6.0.3",
+    "autoprefixer": "^10.4.19",
+    "esbuild": "^0.28.0",
+    "postcss": "^8.4.39",
+    "prettier-plugin-tailwindcss": "^0.6.5",
+    "sass": "^1.74.1",
+    "tailwindcss": "^3.4.4",
+    "typescript": "^5.5.4",
+    "vite": "^8.0.0",
+    "vite-svg-loader": "^5.1.0",
+    "vue-component-type-helpers": "^3.1.8",
+    "vue-tsc": "^2.1.6"
+  }
+}
